@@ -16,10 +16,11 @@ const Login = () => {
         password,
       });
 
-      const loggedInUser = response.data.userDetails;
+      const loggedInUser = response.data.user;
 
       
       localStorage.setItem("user", JSON.stringify(loggedInUser));
+      localStorage.setItem("token", response.data.token);
   
       alert(response.data.message);
 

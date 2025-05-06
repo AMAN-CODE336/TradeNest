@@ -8,7 +8,7 @@ import Trade from "./components/Trade"
 import Footer from "./components/Footer"
 import CustomCursor from "./components/CustomCursor"
 import User_Dashboard from "./components/User_Dashboard"
-
+import Stockdetails from "./components/Stockdetails"
 
 
 // import Globe from "./components/Globe"
@@ -27,7 +27,7 @@ export default function App(){
 {/* <Globe/> */}
 {/* <Trade/> */}
 {/* <User_Dashboard/> */}
-
+{/* <Stockdetails/> */}
 <Footer/>
 </>
   )

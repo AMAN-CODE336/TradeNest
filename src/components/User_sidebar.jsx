@@ -15,9 +15,9 @@ setUser(JSON.parse(storedUser))
 
     return(
         <>
-         
+         <div className='min-h-screen'>
         {/* Your Investments */}
-        <div className="mb-8">
+        <div className="mb-8 ">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold">Your Investments</h2>
             <a href="#" className="text-sm text-green-600 font-medium hover:underline">
@@ -63,7 +63,7 @@ setUser(JSON.parse(storedUser))
             </button>
           </div>
         </div>
-    
+    </div>
         </>
     )
 }

@@ -7,6 +7,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import User_profile from "./User_profile";
 import User_Dashboard from "./User_Dashboard";
+import Stockdetails from './Stockdetails';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,9 +20,15 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
+    try {
+      const storedUser = localStorage.getItem("user");
+      const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+      if (parsedUser) {
+        setUser(parsedUser);
+      }
+    } catch (error) {
+      console.error("Failed to parse user from localStorage", error);
+      localStorage.removeItem("user"); // cleanup corrupt data
     }
   }, []);
 
@@ -135,7 +142,8 @@ export default function Navbar() {
         <Route path="/Login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/User_Dashboard" element={<User_Dashboard />} />
-      </Routes>
+        <Route path="/stocks/:Symbol" element={<Stockdetails />} />
+        </Routes>
     </Router>
   );
 }
