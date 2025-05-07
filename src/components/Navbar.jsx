@@ -134,7 +134,7 @@ export default function Navbar() {
         <Route path="/" element={<Home />} />
         <Route path="/Trade" element={<Trade />} />
 
-        {/* Conditional route logic here */}
+        
         <Route
           path="/Dashboard"
           element={user ? <Navigate to="/User_Dashboard" replace /> : <Dashboard />}
